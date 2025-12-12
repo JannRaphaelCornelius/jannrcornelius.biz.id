@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Ghost Platform</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ghost-yellow': '#FFD34F',
+                        'ghost-pink': '#FF237D',
+                        'ghost-lime': '#A8FF60',
+                        'ghost-dark': '#151719',
+                    },
+                    maxWidth: {
+                        '8xl': '90rem',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="antialiased bg-white">
+
+    <!-- ============================================ -->
+    <!-- HEADER & NAVIGATION -->
+    <!-- ============================================ -->
+    <header class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center py-4">
+
+                <!-- Logo & Desktop Navigation -->
+                <div class="flex items-center space-x-8">
+                    <div class="flex items-center space-x-2">
+                        <a href="index.html">
+                            <img class="h-10" src="images\logos\logo-black-1.webp" alt="Ghost Logo">
+                        </a>
+                    </div>
+
+                    <nav class="hidden lg:flex items-center space-x-6 text-gray-700 text-sm">
+                        <a href="index.html" class="font-medium hover:text-black transition duration-200">Home</a>
+                        <a href="biodata.html" class="font-medium hover:text-black transition duration-200">Biodata</a>
+                        <a href="contact_us.html"
+                            class="font-medium hover:text-black transition duration-200">Contact</a>
+                        <a href="posts.html" class="font-medium text-black">Posts</a>
+                        <a href="freepage.html"
+                            class="font-medium hover:text-black transition duration-200">Projects</a>
+
+                        <!-- Dropdown Menu -->
+                        <div class="relative group">
+                            <button class="font-medium hover:text-black flex items-center transition duration-200">
+                                External
+                                <svg class="ml-1 w-4 h-4 text-gray-400 group-hover:text-gray-900" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            <div
+                                class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                                <a href="https://fti.unai.edu/" target="_blank"
+                                    class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-black transition duration-200">FTI
+                                    UNAI</a>
+                                <a href="https://www.unai.edu/" target="_blank"
+                                    class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-black transition duration-200 border-t border-gray-100">UNAI
+                                    Website</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex items-center space-x-6 text-sm">
+                    <a href="contact_us.html"
+                        class="text-gray-700 hover:text-black font-medium transition duration-200">Get Started</a>
+                    <a href="biodata.html"
+                        class="bg-black text-white px-5 py-2 font-medium hover:bg-gray-800 transition duration-150 ease-in-out rounded-md">View
+                        Profile</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="lg:hidden">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden lg:hidden pb-4">
+                <nav class="flex flex-col space-y-3">
+                    <a href="index.html"
+                        class="font-medium text-gray-700 hover:text-black py-2 transition duration-200">Home</a>
+                    <a href="biodata.html"
+                        class="font-medium text-gray-700 hover:text-black py-2 transition duration-200">Biodata</a>
+                    <a href="contact_us.html"
+                        class="font-medium text-gray-700 hover:text-black py-2 transition duration-200">Contact</a>
+                    <a href="posts.html" class="font-medium text-black py-2">Posts</a>
+                    <a href="freepage.html"
+                        class="font-medium text-gray-700 hover:text-black py-2 transition duration-200">Projects</a>
+
+                    <div class="pt-3 border-t border-gray-200">
+                        <p class="text-xs font-semibold text-gray-500 uppercase mb-2">External Links</p>
+                        <a href="https://fti.unai.edu/" target="_blank"
+                            class="block font-medium text-gray-700 hover:text-black py-2 transition duration-200">FTI
+                            UNAI ↗</a>
+                        <a href="https://www.unai.edu/" target="_blank"
+                            class="block font-medium text-gray-700 hover:text-black py-2 transition duration-200">UNAI
+                            Website ↗</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- HERO SECTION -->
+    <!-- ============================================ -->
+    <section class="pt-16 sm:pt-24 pb-12">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6">
+
+            <!-- Hero Text -->
+            <div class="text-center mb-12">
+                <a href="#"
+                    class="inline-block bg-yellow-400 transition rounded-full px-6 py-2 text-sm font-semibold mb-6">
+                    Just launched: Ghost 6.0 →
+                </a>
+                <h1 class="text-5xl sm:text-6xl lg:text-8xl font-bold text-gray-900 tracking-tight mb-4">
+                    Turn your audience<br>
+                    <span class="text-gray-900">into a business</span>.
+                </h1>
+                <p class="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto mb-8">
+                    Professional publishing platform for creating, sharing, and growing your content business with
+                    modern tools.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
+                    <a href="contact_us.html"
+                        class="inline-block bg-black text-white px-8 py-4 font-semibold rounded-lg hover:bg-gray-800 transition duration-200 transform hover:scale-105 shadow-lg">
+                        Get Started - Free
+                    </a>
+                    <a href="biodata.html"
+                        class="inline-block bg-white text-gray-900 px-8 py-4 font-semibold rounded-lg border-2 border-gray-900 hover:bg-gray-900 hover:text-white transition duration-200 transform hover:scale-105">
+                        View My Profile
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Video/Image -->
+            <div class="relative mt-16 rounded-t-2xl overflow-hidden bg-gray-100 shadow-2xl">
+                <div
+                    class="aspect-video bg-gradient-to-br from-purple-100 via-pink-50 to-blue-50 flex items-center justify-center relative">
+                    <video class="absolute inset-0 w-full h-full object-cover" src="videos/dashboard.mp4"
+                        poster="images/home/dashboard.webp" preload="none" muted loop autoplay></video>
+                    <div class="relative z-10 text-center p-8">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- DESCRIPTION SECTION -->
+    <!-- ============================================ -->
+    <section class="py-20 bg-white">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6">
+            <p class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-8">
+                Ghost is a powerful app for professional publishers to create, share, and grow a business around their
+                content. It comes with modern tools to build a website, publish content, send newsletters & offer paid
+                subscriptions to members.
+            </p>
+            <a href="contact_us.html"
+                class="text-xl sm:text-2xl lg:text-4xl text-gray-600 font-semibold hover:underline transition duration-200">
+                Try Ghost completely free for 14 days →
+            </a>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- QUICK NAVIGATION CARDS -->
+    <!-- ============================================ -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Explore Our Platform</h2>
+                <p class="text-xl text-gray-600">Navigate through different sections of our website</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Biodata Card -->
+                <a href="biodata.html" class="group">
+                    <div
+                        class="bg-white rounded-2xl p-6 border-2 border-gray-200 hover:border-purple-500 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                        <div
+                            class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-500 transition duration-300">
+                            <span class="text-2xl group-hover:scale-110 transition duration-300">👤</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">My Profile</h3>
+                        <p class="text-gray-600 mb-4">Learn more about me, my skills, and experience</p>
+                        <span
+                            class="text-purple-600 font-semibold group-hover:translate-x-2 inline-block transition duration-300">View
+                            Profile →</span>
+                    </div>
+                </a>
+
+                <!-- Contact Card -->
+                <a href="contact_us.html" class="group">
+                    <div
+                        class="bg-white rounded-2xl p-6 border-2 border-gray-200 hover:border-blue-500 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                        <div
+                            class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-500 transition duration-300">
+                            <span class="text-2xl group-hover:scale-110 transition duration-300">📧</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Contact Us</h3>
+                        <p class="text-gray-600 mb-4">Register or get in touch with our team</p>
+                        <span
+                            class="text-blue-600 font-semibold group-hover:translate-x-2 inline-block transition duration-300">Contact
+                            Now →</span>
+                    </div>
+                </a>
+
+                <!-- Posts Card -->
+                <a href="posts.html" class="group">
+                    <div
+                        class="bg-white rounded-2xl p-6 border-2 border-gray-200 hover:border-pink-500 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                        <div
+                            class="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-pink-500 transition duration-300">
+                            <span class="text-2xl group-hover:scale-110 transition duration-300">📝</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Featured Post</h3>
+                        <p class="text-gray-600 mb-4">Read our latest content and updates</p>
+                        <span
+                            class="text-pink-600 font-semibold group-hover:translate-x-2 inline-block transition duration-300">Read
+                            More →</span>
+                    </div>
+                </a>
+
+                <!-- Projects Card -->
+                <a href="freepage.html" class="group">
+                    <div
+                        class="bg-white rounded-2xl p-6 border-2 border-gray-200 hover:border-green-500 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                        <div
+                            class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-500 transition duration-300">
+                            <span class="text-2xl group-hover:scale-110 transition duration-300">🎨</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">My Projects</h3>
+                        <p class="text-gray-600 mb-4">Explore my portfolio and creative works</p>
+                        <span
+                            class="text-green-600 font-semibold group-hover:translate-x-2 inline-block transition duration-300">View
+                            Gallery →</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- DESIGN SECTION -->
+    <!-- ============================================ -->
+    <section class="py-20 bg-gray-900 text-white">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+                <!-- Text Content -->
+                <div>
+                    <h2 class="text-xs text-ghost-lime uppercase tracking-widest mb-6">Easy site design</h2>
+                    <h3 class="text-3xl lg:text-5xl font-bold mb-6">
+                        Complete control over <em>your</em> website and branding.
+                    </h3>
+                    <p class="text-xl lg:text-2xl text-gray-300 mb-6">
+                        Launch a custom website and tweak the design settings to perfectly match your brand and style.
+                    </p>
+                    <p class="text-xl lg:text-2xl text-gray-300 mb-6">
+                        Go even further with hundreds of custom themes in our marketplace, or build your own completely
+                        custom design from scratch.
+                    </p>
+                    <p class="text-xl lg:text-2xl text-gray-300 mb-6">
+                        Your unique brand sits front and center, while Ghost runs things in the background.
+                    </p>
+                    <a href="freepage.html"
+                        class="text-xl lg:text-2xl text-ghost-lime font-semibold hover:underline transition duration-200">
+                        Explore Ghost themes →
+                    </a>
+                </div>
+
+                <!-- Video -->
+                <div class="rounded-2xl overflow-hidden bg-gray-800 shadow-xl">
+                    <div
+                        class="aspect-video bg-gradient-to-br from-blue-500 to-purple-600 relative flex items-center justify-center">
+                        <video class="absolute inset-0 w-full h-full object-cover"
+                            src="https://ghost.org/videos/themes.mp4" poster="images/home/themes.webp" preload="none"
+                            muted loop autoplay>
+                            Browser Anda tidak mendukung tag video HTML5.
+                        </video>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Theme Gallery Grid -->
+            <div class="mt-20 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4">
+
+                <!-- Column 1 -->
+                <div class="space-y-4">
+                    <div
+                        class="bg-gray-800 rounded-lg aspect-[3/4] overflow-hidden hover:scale-105 transition cursor-pointer shadow-lg">
+                        <img src="images/1.png" alt="Theme 1" class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="bg-gray-800 rounded-lg aspect-[3/4] overflow-hidden hover:scale-105 transition cursor-pointer shadow-lg">
+                        <img src="images/10.png" alt="Theme 2" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="space-y-4 md:translate-y-8">
+                    <div
+                        class="bg-gray-800 rounded-lg aspect-[3/4] overflow-hidden hover:scale-105 transition cursor-pointer shadow-lg">
+                        <img src="images/14.png" alt="Theme 3" class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="bg-gray-800 rounded-lg aspect-[3/4] overflow-hidden hover:scale-105 transition cursor-pointer shadow-lg">
+                        <img src="images/15.png" alt="Theme 4" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="space-y-4">
+                    <div
+                        class="bg-gray-800 rounded-lg aspect-[3/4] overflow-hidden hover:scale-105 transition cursor-pointer shadow-lg">
+                        <img src="images/16.png" alt="Theme 5" class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="bg-gray-800 rounded-lg aspect-[3/4] overflow-hidden hover:scale-105 transition cursor-pointer shadow-lg">
+                        <img src="images/19.png" alt="Theme 6" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Column 4 -->
+                <div class="space-y-4 md:translate-y-8">
+                    <div
+                        class="bg-gray-800 rounded-lg aspect-[3/4] overflow-hidden hover:scale-105 transition cursor-pointer shadow-lg">
+                        <img src="images/2.png" alt="Theme 7" class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="bg-gray-800 rounded-lg aspect-[3/4] overflow-hidden hover:scale-105 transition cursor-pointer shadow-lg">
+                        <img src="images/20.png" alt="Theme 8" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Column 5 -->
+                <div class="space-y-4 hidden lg:block">
+                    <div
+                        class="bg-gray-800 rounded-lg aspect-[3/4] overflow-hidden hover:scale-105 transition cursor-pointer shadow-lg">
+                        <img src="images/25.png" alt="Theme 9" class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="bg-gray-800 rounded-lg aspect-[3/4] overflow-hidden hover:scale-105 transition cursor-pointer shadow-lg">
+                        <img src="images/27.png" alt="Theme 10" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Column 6 -->
+                <div class="space-y-4 hidden xl:block xl:translate-y-8">
+                    <div
+                        class="bg-gray-800 rounded-lg aspect-[3/4] overflow-hidden hover:scale-105 transition cursor-pointer shadow-lg">
+                        <img src="images/29.png" alt="Theme 11" class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="bg-gray-800 rounded-lg aspect-[3/4] overflow-hidden hover:scale-105 transition cursor-pointer shadow-lg">
+                        <img src="images/31.png" alt="Theme 12" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Column 7 -->
+                <div class="space-y-4 hidden xl:block">
+                    <div
+                        class="bg-gray-800 rounded-lg aspect-[3/4] overflow-hidden hover:scale-105 transition cursor-pointer shadow-lg">
+                        <img src="images/33.png" alt="Theme 13" class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="bg-gray-800 rounded-lg aspect-[3/4] overflow-hidden hover:scale-105 transition cursor-pointer shadow-lg">
+                        <img src="images/32.png" alt="Theme 14" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- EXTERNAL LINKS / PARTNERS SECTION -->
+    <!-- ============================================ -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Partners</h2>
+                <p class="text-xl text-gray-600">Proudly associated with</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+
+                <!-- FTI UNAI Card -->
+                <a href="https://fti.unai.edu/" target="_blank"
+                    class="group bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 border-2 border-blue-100 hover:border-blue-500 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center">
+                            <span class="text-3xl">🎓</span>
+                        </div>
+                        <svg class="w-6 h-6 text-blue-500 group-hover:translate-x-2 transition duration-300" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">FTI UNAI</h3>
+                    <p class="text-gray-700 mb-4">Faculty of Information Technology - Universitas Advent Indonesia</p>
+                    <span class="text-blue-600 font-semibold">Visit Website →</span>
+                </a>
+
+                <!-- UNAI Card -->
+                <a href="https://www.unai.edu/" target="_blank"
+                    class="group bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 border-2 border-purple-100 hover:border-purple-500 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center">
+                            <span class="text-3xl">🏛️</span>
+                        </div>
+                        <svg class="w-6 h-6 text-purple-500 group-hover:translate-x-2 transition duration-300"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">UNAI Website</h3>
+                    <p class="text-gray-700 mb-4">Official website of Universitas Advent Indonesia</p>
+                    <span class="text-purple-600 font-semibold">Visit Website →</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- EDITOR SECTION -->
+    <!-- ============================================ -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6">
+            <h2 class="text-xs text-gray-500 uppercase tracking-widest mb-4">Advanced creator tools</h2>
+            <h3 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Publish by web & email newsletter.
+            </h3>
+            <p class="text-xl lg:text-2xl text-gray-700 max-w-4xl mb-12">
+                An editor built from the ground-up for professionals. Calm by design, with advanced workflows by
+                default. No more suffering through clumsy toolbars or drag & oops.
+            </p>
+
+            <!-- Editor Preview -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg">
+                <div
+                    class="aspect-video bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center relative">
+                    <!-- Ganti dengan foto/video Anda -->
+                    <video class="absolute inset-0 w-full h-full object-cover" src="https://ghost.org/videos/editor.mp4"
+                        poster="images/editor/editor-preview.jpg" muted loop autoplay></video>
+
+
+
+                    <!-- Fallback jika gambar belum ada -->
+                    <div class="text-center p-8 relative z-10">
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="mt-20 grid md:grid-cols-2 gap-16">
+
+                <!-- Feature 1: Rich Media -->
+                <div class="flex gap-8">
+                    <div class="flex-shrink-0">
+                        <div class="w-32 h-32 bg-white rounded-lg shadow-lg overflow-hidden">
+                            <!-- Ganti dengan foto/video Anda -->
+                            <img src="https://ghost.org/images/home/rich-media_huddde3de0210564f5a2a17ac289541a12_96216_816x0_resize_q100_h2_box_3.webp"
+                                alt="Rich Media" class="w-full h-full object-cover">
+                            <!-- Atau gunakan video -->
+                            <!-- <video class="w-full h-full object-cover" src="videos/rich-media.mp4" muted loop autoplay></video> -->
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl lg:text-4xl font-bold text-gray-900 mb-4">
+                            Rich media & dynamic cards.
+                        </h4>
+                        <p class="text-xl lg:text-2xl text-gray-700">
+                            Modern publishing requires more than just words. Expand your story with image galleries,
+                            gifs, video, audio, and so much more.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Newsletters -->
+                <div class="flex gap-8 flex-row-reverse">
+                    <div class="flex-shrink-0">
+                        <div class="w-32 h-32 bg-white rounded-lg shadow-lg overflow-hidden">
+                            <!-- Ganti dengan foto/video Anda -->
+                            <img src="https://ghost.org/images/home/newsletters_hu16db4287012918642023c05f2cd52e4a_41443_816x0_resize_q100_h2_box_3.webp"
+                                alt="Newsletters" class="w-full h-full object-cover">
+                            <!-- Atau gunakan video -->
+                            <!-- <video class="w-full h-full object-cover" src="videos/newsletters.mp4" muted loop autoplay></video> -->
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl lg:text-4xl font-bold text-gray-900 mb-4">
+                            Newsletters built-in.
+                        </h4>
+                        <p class="text-xl lg:text-2xl text-gray-700">
+                            Deliver posts by email newsletter to your audience. Segment and send multiple different
+                            newsletters based on preference.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- MEMBERS SECTION -->
+    <!-- ============================================ -->
+    <section class="py-20 bg-gray-900 text-white">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+                <!-- Image -->
+                <div class="order-2 lg:order-1">
+                    <div class="rounded-2xl overflow-hidden bg-pink-200 relative">
+                        <div class="aspect-square flex items-center justify-center">
+                            <!-- Ganti dengan foto/video Anda -->
+                            <video class="absolute inset-0 w-full h-full object-cover" src="videos/portal.mp4"
+                                poster="images/home/portal.webp" muted loop autoplay></video>
+
+
+                            <!-- Fallback jika gambar belum ada -->
+                            <div class="text-center p-8 relative z-10">
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="order-1 lg:order-2">
+                    <h2 class="text-xs text-ghost-lime uppercase tracking-widest mb-6">Grow your audiences</h2>
+                    <h3 class="text-3xl lg:text-5xl font-bold mb-6">
+                        Transform those clicks into contacts.
+                    </h3>
+                    <p class="text-xl lg:text-2xl text-gray-300 mb-6">
+                        Until now, building an indie publication with memberships and subscriptions has been difficult
+                        and complicated.
+                    </p>
+                    <p class="text-xl lg:text-2xl text-gray-300 mb-6">
+                        Ghost makes it easy, with native signup forms that turn anonymous views into logged-in members.
+                    </p>
+                    <p class="text-xl lg:text-2xl text-white font-medium">
+                        Hello, new friends.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- ANALYTICS SECTION -->
+    <!-- ============================================ -->
+    <section class="py-20 bg-white">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6">
+            <h2 class="text-xs text-gray-500 uppercase tracking-widest mb-4">Run your business</h2>
+            <h3 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Manage your memberships.
+            </h3>
+            <p class="text-xl lg:text-2xl text-gray-700 max-w-4xl mb-12">
+                See who's signing up, who's paying, and what they're reading, so you can get a better understanding of
+                your core audience.
+            </p>
+
+            <!-- Analytics Dashboard Preview -->
+            <div class="bg-gray-50 rounded-2xl overflow-hidden p-8">
+                <div
+                    class="aspect-video bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg flex items-center justify-center relative">
+                    <!-- Ganti dengan foto/video Anda -->
+                    <video class="absolute inset-0 w-full h-full object-cover"
+                        src="https://ghost.org/videos/members.mp4" poster="images/home/members.webp" preload="none"
+                        muted loop autoplay>
+                        Browser Anda tidak mendukung tag video HTML5.
+                    </video>
+                    <!-- Atau gunakan video -->
+                    <!-- <video class="absolute inset-0 w-full h-full object-cover rounded-lg" src="videos/analytics-dashboard.mp4" poster="images/analytics/dashboard.jpg" muted loop autoplay></video> -->
+
+                    <!-- Fallback jika gambar belum ada -->
+                    <div class="text-center p-8 relative z-10">
+                        <div class="text-6xl mb-4">📈</div>
+                        <p class="text-gray-600">Analytics Dashboard</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="mt-20 grid md:grid-cols-2 gap-16">
+
+                <!-- Feature 1: Native Analytics -->
+                <div class="flex gap-8">
+                    <div class="flex-shrink-0">
+                        <div class="w-32 h-32 bg-gray-100 rounded-lg overflow-hidden">
+                            <!-- Ganti dengan foto/video Anda -->
+                            <img src="https://ghost.org/images/home/native-analytics_hube9f4ce53cd3dc80d0a977ea75029ad7_16450_816x0_resize_q100_h2_box_3.webp"
+                                alt="Native Analytics" class="w-full h-full object-cover">
+                            <!-- Atau gunakan video -->
+                            <!-- <video class="w-full h-full object-cover" src="videos/native-analytics.mp4" muted loop autoplay></video> -->
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl lg:text-4xl font-bold text-gray-900 mb-4">
+                            Native analytics.
+                        </h4>
+                        <p class="text-xl lg:text-2xl text-gray-700">
+                            Understand what's working. Detailed engagement analytics for your audience.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Offers & Promotions -->
+                <div class="flex gap-8 flex-row-reverse">
+                    <div class="flex-shrink-0">
+                        <div class="w-32 h-32 bg-gray-100 rounded-lg overflow-hidden">
+                            <!-- Ganti dengan foto/video Anda -->
+                            <img src="https://ghost.org/images/home/offers-promotions_hu0f9c92914823a14a9f790b98506d5d7c_19779_816x0_resize_q100_h2_box_3.webp"
+                                alt="Offers & Promotions" class="w-full h-full object-cover">
+                            <!-- Atau gunakan video -->
+                            <!-- <video class="w-full h-full object-cover" src="videos/offers-promotions.mp4" muted loop autoplay></video> -->
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl lg:text-4xl font-bold text-gray-900 mb-4">
+                            Offers & promotions.
+                        </h4>
+                        <p class="text-xl lg:text-2xl text-gray-700">
+                            Entice new subscribers with offers and promotions to grow your business.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- INTEGRATIONS SECTION -->
+    <!-- ============================================ -->
+    <section class="py-20 bg-gray-50 relative overflow-hidden">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6">
+
+            <!-- Rainbow Arc Layout for Integration Icons -->
+            <div class="relative h-96 mb-20">
+
+                <!-- Left Side Icons (ascending) -->
+                <a href="https://ghost.org/integrations/spotify/" target="_blank"
+                    class="absolute left-[5%] bottom-20 w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center transform hover:scale-110 transition animate-float cursor-pointer"
+                    style="animation-delay: 0s;">
+                    <img src="https://cdn.cdnlogo.com/logos/s/89/spotify.svg" alt="Spotify" class="w-12 h-12">
+                </a>
+
+                <a href="https://ghost.org/integrations/discord/" target="_blank"
+                    class="absolute left-[12%] bottom-32 w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center transform hover:scale-110 transition animate-float cursor-pointer"
+                    style="animation-delay: 0.5s;">
+                    <img src="https://cdn.cdnlogo.com/logos/d/43/discord.svg" alt="Discord" class="w-12 h-12">
+                </a>
+
+                <a href="https://ghost.org/integrations/activecampaign/" target="_blank"
+                    class="absolute left-[20%] bottom-40 w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center transform hover:scale-110 transition animate-float cursor-pointer"
+                    style="animation-delay: 1s;">
+                    <img src="images/activecampaign.webp" alt="Prompt" class="w-12 h-12">
+                </a>
+
+                <a href="https://ghost.org/integrations/twitter/" target="_blank"
+                    class="absolute left-[28%] bottom-44 w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center transform hover:scale-110 transition animate-float cursor-pointer"
+                    style="animation-delay: 1.5s;">
+                    <img src="images/twitter.png" alt="Twitter" class="w-12 h-12">
+                </a>
+
+                <!-- Top Center Icons (peak of rainbow) -->
+                <a href="https://ghost.org/integrations/zapier/" target="_blank"
+                    class="absolute left-[36%] bottom-48 w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center transform hover:scale-110 transition animate-float cursor-pointer"
+                    style="animation-delay: 2s;">
+                    <img src="images/zapier.webp" alt="Zapier" class="w-12 h-12">
+                </a>
+
+                <a href="https://ghost.org/integrations/stripe/" target="_blank"
+                    class="absolute left-1/2 -translate-x-1/2 bottom-52 w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center transform hover:scale-110 transition animate-float cursor-pointer"
+                    style="animation-delay: 2.5s;">
+                    <img src="images/stripe.svg" alt="Stripe" class="w-12 h-12">
+                </a>
+
+                <a href="https://ghost.org/integrations/slack/" target="_blank"
+                    class="absolute right-[36%] bottom-48 w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center transform hover:scale-110 transition animate-float cursor-pointer"
+                    style="animation-delay: 3s;">
+                    <img src="images/slack.webp" alt="Slack" class="w-12 h-12">
+                </a>
+
+                <!-- Right Side Icons (descending) -->
+                <a href="https://ghost.org/integrations/instagram/" target="_blank"
+                    class="absolute right-[28%] bottom-44 w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center transform hover:scale-110 transition animate-float cursor-pointer"
+                    style="animation-delay: 3.5s;">
+                    <img src="images/ig.webp" alt="Instagram" class="w-12 h-12">
+                </a>
+
+                <a href="https://ghost.org/integrations/facebook/" target="_blank"
+                    class="absolute right-[20%] bottom-40 w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center transform hover:scale-110 transition animate-float cursor-pointer"
+                    style="animation-delay: 4s;">
+                    <img src="images/fb.webp" alt="Facebook" class="w-12 h-12">
+                </a>
+
+                <a href="https://ghost.org/integrations/youtube/" target="_blank"
+                    class="absolute right-[12%] bottom-32 w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center transform hover:scale-110 transition animate-float cursor-pointer"
+                    style="animation-delay: 4.5s;">
+                    <img src="images/youtube-icon.svg" alt="YouTube" class="w-12 h-12">
+                </a>
+
+                <a href="https://ghost.org/integrations/feedly/" target="_blank"
+                    class="absolute right-[5%] bottom-20 w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center transform hover:scale-110 transition animate-float cursor-pointer"
+                    style="animation-delay: 5s;">
+                    <img src="images/feedly.webp" alt="Feedly" class="w-12 h-12">
+                </a>
+
+                <!-- Additional scattered icons for fullness -->
+                <a href="https://ghost.org/integrations/ulysses/" target="_blank"
+                    class="absolute left-[15%] bottom-26 w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center transform hover:scale-110 transition animate-float cursor-pointer"
+                    style="animation-delay: 5.5s;">
+                    <img src="images/ulysses.webp" alt="Bluesky" class="w-10 h-10">
+                </a>
+
+                <a href="https://ghost.org/integrations/?tag=analytics" target="_blank"
+                    class="absolute right-[15%] bottom-26 w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center transform hover:scale-110 transition animate-float cursor-pointer"
+                    style="animation-delay: 6s;">
+                    <img src="images/analytics.webp" alt="Analytics" class="w-10 h-10">
+                </a>
+            </div>
+
+            <!-- Center Content -->
+            <div class="text-center">
+                <h2 class="text-xs text-gray-500 uppercase tracking-widest mb-6">INTEGRATIONS</h2>
+                <h3 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Works with everything.</h3>
+                <p class="text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed">
+                    Social, referral programs, push notifications, social sharing,<br>
+                    payment gateways, A/B testing, desktop editors, mobile apps,<br>
+                    comments, recommendations. <strong class="text-gray-900">Yes.</strong>
+                </p>
+                <a href="freepage.html"
+                    class="inline-flex items-center text-lg text-gray-600 font-semibold hover:text-gray-900 transition group">
+                    Explore the integrations library
+                    <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+
+
+    <!-- ============================================ -->
+    <!-- CTA SECTION -->
+    <!-- ============================================ -->
+    <section class="py-32 bg-ghost-dark text-white text-center">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6">
+            <h2 class="text-xs text-ghost-lime uppercase tracking-widest mb-8">Launch your big idea</h2>
+            <p class="text-3xl md:text-5xl font-bold mb-4">
+                Last week, <span class="text-white">11,218</span> brand new<br>
+                publications got started with Ghost.
+            </p>
+            <p class="text-3xl md:text-5xl font-bold mb-12">
+                <span class="text-white">Today, it's your turn.</span>
+            </p>
+            <a href="contact_us.html"
+                class="inline-block text-xl text-black font-semibold py-4 px-8 rounded-lg bg-ghost-lime hover:bg-yellow-300 transition">
+                Start publishing now →
+            </a>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================ -->
+    <footer class="bg-ghost-dark text-gray-400 py-12">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6">
+
+            <!-- Top Navigation -->
+            <div class="flex flex-col sm:flex-row justify-between items-center border-b border-gray-800 pb-8 mb-8">
+                <nav class="flex items-center space-x-8 text-sm mb-4 sm:mb-0">
+                    <a href="#" class="hover:text-ghost-lime transition">About</a>
+                    <a href="#" class="hover:text-ghost-lime transition">Explore</a>
+                    <a href="#" class="hover:text-ghost-lime transition">Careers</a>
+                    <a href="#" class="hover:text-ghost-lime transition">Resources</a>
+                </nav>
+            </div>
+
+            <!-- Footer Links Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+
+                <!-- Product -->
+                <div>
+                    <h4 class="text-white font-medium mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Creator platform</a></li>
+                        <li><a href="#" class="hover:text-white transition">Theme marketplace</a></li>
+                        <li><a href="#" class="hover:text-white transition">Integrations</a></li>
+                        <li><a href="#" class="hover:text-white transition">Experts</a></li>
+                    </ul>
+                </div>
+
+                <!-- Developers -->
+                <div>
+                    <h4 class="text-white font-medium mb-4">Developers</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Installation</a></li>
+                        <li><a href="#" class="hover:text-white transition">Documentation</a></li>
+                        <li><a href="#" class="hover:text-white transition">API</a></li>
+                        <li><a href="#" class="hover:text-white transition">Source code</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h4 class="text-white font-medium mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Tutorials</a></li>
+                        <li><a href="#" class="hover:text-white transition">Resources</a></li>
+                        <li><a href="#" class="hover:text-white transition">Reviews</a></li>
+                        <li><a href="#" class="hover:text-white transition">Open Platforms</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="text-white font-medium mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Help center</a></li>
+                        <li><a href="#" class="hover:text-white transition">Community</a></li>
+                        <li><a href="#" class="hover:text-white transition">Status</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="flex flex-col sm:flex-row justify-between items-center pt-8 border-t border-gray-800 text-sm">
+                <div class="flex items-center space-x-8 mb-4 sm:mb-0">
+                    <span>Non-Profit Foundation</span>
+                    <span>Open Source</span>
+                    <span>Carbon Neutral</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="hover:text-white transition">Terms</a>
+                    <a href="#" class="hover:text-white transition">Privacy</a>
+                    <a href="#" class="hover:text-white transition">Contact</a>
+                    <span>Ghost Foundation © 2025</span>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- JAVASCRIPT -->
+    <!-- ============================================ -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+
+</body>
+
+</html>
